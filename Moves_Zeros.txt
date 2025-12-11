@@ -12,6 +12,7 @@ class Solution(object):
                 prev = prev + 1
                 init = init + 1
         """
+ok
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
