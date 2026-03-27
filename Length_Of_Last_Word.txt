@@ -1,0 +1,15 @@
+///// javascript  /////////
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function(s) {
+    var x = s.split(" ")
+    var y = x.filter(Boolean)
+    
+    return y[y.length-1].length
+    
+};
+
+///// python//////////////
