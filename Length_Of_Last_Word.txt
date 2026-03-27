@@ -13,3 +13,15 @@ var lengthOfLastWord = function(s) {
 };
 
 ///// python//////////////
+
+
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        x = s.split(" ")
+        y = list(filter(bool,x))
+        return len(y[len(y)-1])
+        
