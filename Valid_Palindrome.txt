@@ -1,0 +1,23 @@
+////  javascript//////
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    var x = s.toLowerCase()
+    var y = x.split(" ")
+    var cleaned = x.replace(/[^a-zA-Z0-9]/g, "");
+    console.log(cleaned)
+    var r
+    if (cleaned.length%2==0) 
+    {r=cleaned.length/2
+    }
+    else{r=cleaned.length+1}
+    for ( let i=0; i<=r; i++){
+        if (cleaned[i]!= cleaned[cleaned.length-i-1] )
+        {return false}
+        
+    }
+    return true
+    console.log(cleaned)
+};
