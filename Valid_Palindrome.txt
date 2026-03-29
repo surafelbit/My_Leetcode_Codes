@@ -5,19 +5,32 @@
  */
 var isPalindrome = function(s) {
     var x = s.toLowerCase()
-    var y = x.split(" ")
     var cleaned = x.replace(/[^a-zA-Z0-9]/g, "");
-    console.log(cleaned)
-    var r
-    if (cleaned.length%2==0) 
-    {r=cleaned.length/2
-    }
-    else{r=cleaned.length+1}
+    var r = Math.floor(cleaned.length / 2);
     for ( let i=0; i<=r; i++){
         if (cleaned[i]!= cleaned[cleaned.length-i-1] )
         {return false}
         
     }
     return true
-    console.log(cleaned)
 };
+
+//// python //////
+
+import re
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        x = s.lower()
+        cleaned = re.sub(r'[^a-zA-Z0-9]',"",x)
+        r = len(s)/2
+        print(cleaned)
+        for i in range(len(cleaned)-1):
+            if (cleaned[i]!=cleaned[len(cleaned)-1-i]):
+                return False
+        return True
+        
+        
