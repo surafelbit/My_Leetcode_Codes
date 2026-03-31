@@ -1,0 +1,171 @@
+/**
+ * @param {number} num
+ * @return {string}
+ */
+var intToRoman = function(num) {
+    var len = num.toString().length
+    var number = num.toString()
+    console.log(len)
+let val
+let g
+let numArray= []
+let ton
+let ok 
+let ton1
+let ok1 
+let val1
+let now1
+let now 
+let isFive
+let value 
+let nowval
+let finalTon
+let finalVal
+let isAboveFivePlus 
+let finalString     
+let zy=["M","C","X","I","D","L","V"]
+var fo
+    for (let i = 0 ; i <len; i++){
+        
+        
+        let ten=0
+         if (Number(number[i])>5 && Number(number[i])!=9){
+
+                  isAboveFive = 10**(number.length-i)/2
+                   switch(isAboveFive){
+                case 500:
+                valueNew="D"
+                break;
+                case 50:
+                valueNew ="L"
+                break;
+                case 5:
+                valueNew ="V"
+                break;
+            } 
+               numArray.push(valueNew)   
+               isAboveFivePlus = Number(number[i]) -5
+                 isAboveFiveAdded = 10**(number.length-i-1)
+                  switch(isAboveFive){
+        case 500:
+         nowval="C";
+         break;
+        case 50:
+        nowval = "X"
+        break;
+        case 5:
+        nowval ="I";
+        break;
+        }
+                numArray.push(nowval.repeat(Number(isAboveFivePlus)))
+
+
+
+
+         }
+       else if (Number(number[i])!=4 && Number(number[i])!=9 && Number(number[i]!=5)){
+         finalTon = 10**(number.length-i-1)
+       switch (finalTon){
+        case 1000:
+        finalVal = "M"
+        break;
+        case 100:
+        finalVal ="C"
+                break;
+
+        case 10:
+        finalVal = "X"
+                break;
+
+        case 1:
+        finalVal ="I"
+                break;
+
+       }
+        
+             fo = zy[i] 
+         
+          numArray.push(finalVal.repeat(Number(number[i])))
+         }
+         else if(Number(number[i])==5){
+            isFive = 10**(number.length-i)/2
+            switch(isFive){
+                case 500:
+                value="D"
+                break;
+                case 50:
+                value ="L"
+                break;
+                case 5:
+                value ="V"
+                break;
+            }
+         numArray.push(value)
+
+         }
+         else if (Number(number[i])==4){
+         ton = 10**(number.length-i) /2
+         switch(ton){
+        case 500:
+         val="D";
+         break;
+        case 50:
+        val = "L"
+        break;
+        case 5:
+        val ="V";
+        break;
+        }
+         ok = 10**(number.length-i-1)
+        switch(ok){
+        case 100:
+         now="C";
+         break;
+        case 10:
+        now = "X"
+        break;
+        case 1:
+        now ="I";
+        break;
+        }
+         numArray.push(now)
+         numArray.push(val)
+         
+         }
+         
+         else if (Number(number[i]==9)){
+         ton1 = 10**(number.length-i)
+         switch(ton1){
+         case 1000:
+         val1="M";
+         break;
+         case 100:
+         val1 = "C"
+         break;
+        case 10:
+        val1 ="X";
+        break;
+        }
+         ok1 = 10**(number.length-i-1)
+         switch(ok1){
+        case 100:
+         now1="C";
+         break;
+        case 10:
+        now1 = "X"
+        break;
+        case 1:
+        now1 ="I";
+        break;
+        }
+         numArray.push(now1)
+         numArray.push(val1)
+
+         }
+        
+         
+
+    } 
+    finalString = numArray.join('')
+    return finalString
+};
