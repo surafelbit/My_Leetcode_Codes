@@ -1,0 +1,22 @@
+///////////// javascript /////////////
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    let count =0
+    let previousCounter = -1
+    for (let i=0; i<nums.length; i++){
+        if(nums[i]!=nums[previousCounter]){
+  
+      nums[count]=nums[i]
+      count ++
+      previousCounter ++
+     }
+   
+    }
+        nums = nums.splice(count-1)
+
+    return count
+};
