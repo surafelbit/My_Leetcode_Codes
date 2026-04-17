@@ -1,0 +1,40 @@
+////////////////// javascript /////////////////
+
+
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+   var some = haystack.split("")
+  
+   console.log(some)
+   var x = needle.split("")
+   var y = true
+   console.log(some.includes(x[0]))
+   var z = some.indexOf(x[0])
+   const t = some.find((e)=>x[0])
+   const index = []
+   some.forEach((e,i)=>{
+    if(e==x[0]){
+        index.push(i)
+    }
+   })
+   for ( let u =0; u<index.length; u++ ){
+        let n = index[u]
+
+   for(let i=0; i<x.length; i++){
+    y = y && (x[i] == some[n])
+    n++
+   }
+ if(y==true){
+    return index[u]
+ }
+ else{
+    y = true
+ }
+   }
+       return -1
+  
+};
