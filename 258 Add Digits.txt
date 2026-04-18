@@ -1,0 +1,35 @@
+/////// javascript /////////////////
+
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var addDigits = function(num) {
+    let reservenum = 0
+   let result = 0
+           
+let y = num
+while(result>9 || result==0)
+        {
+            let x = y.toString().length
+            for (let i=0; i<x;i++){
+  reservenum = y % 10
+  
+      result = result + reservenum
+      
+      y =  Math.floor(y/10)
+        }
+        y = result
+        if( result<10){
+            return result
+            break
+        }
+        else{
+            result = 0
+        }
+        
+    
+    }
+    
+    
+};
