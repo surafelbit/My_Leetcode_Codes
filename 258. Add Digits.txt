@@ -33,3 +33,27 @@ while(result>9 || result==0)
     
     
 };
+
+
+/////////// python ////////////
+
+class Solution(object):
+    def addDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        reservenum = 0
+        result = 0
+        y = num
+        while(result>9 or result==0):
+            x = len(str(y))
+            for i in range(x):
+                reservenum = y % 10
+                result = result + reservenum
+                y = y//10
+            y = result
+            if( result<10):
+                return result
+            else:
+                result = 0            
