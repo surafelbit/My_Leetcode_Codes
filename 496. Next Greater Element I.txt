@@ -6,26 +6,26 @@
  * @return {number[]}
  */
 var nextGreaterElement = function(nums1, nums2) {
-    let n
-    let sub
-    let max
     let arr = []
-    for (let i=0; i<nums1.length; i++){
-        for(let j=0; j<nums2.length; j++){
-            if(nums1[i]==nums2[j]){
-              sub = nums2.slice(j, nums2.length)
-              k = j + 1
-              while(nums2[k]<nums1[i]){
-                k++
-              }
-              if(nums2[k]>nums1[i]){
-              arr.push(nums2[k])}
-              else{
-                arr.push(-1)
-              }
-            }
-            
+    let map={}
+        let stack = []
+
+    for (let t=0; t<nums2.length; t++){
+    let number = nums2[t]
+    while(stack.length && number>stack[stack.length-1]){
+     let smaller = stack.pop();
+     map[smaller]= number
+    }
+    stack.push(number)
+    }
+    for (let i =0; i<nums1.length; i++){
+        if(map[nums1[i]]){
+            arr.push(map[nums1[i]])
+        }
+        else{
+            arr.push(-1)
         }
     }
+    
     return arr
 };
