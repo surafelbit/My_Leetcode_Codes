@@ -29,3 +29,31 @@ var nextGreaterElement = function(nums1, nums2) {
     
     return arr
 };
+
+
+////////////// python /////////////////
+
+class Solution(object):
+    def nextGreaterElement(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        stack = []
+        arr = []
+        map = {}
+        for i in range(len(nums2)):
+            number = nums2[i]
+            while(len(stack )and number > stack[(len(stack)-1)] ):
+                smaller = stack.pop()
+                map[smaller] = number
+            stack.append(number)    
+        for i in range(len(nums1)):
+            if(nums1[i] in map):
+                arr.append(map[nums1[i]])
+            else:
+                arr.append(-1)
+        return arr        
+
+        
