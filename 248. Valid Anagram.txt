@@ -1,0 +1,35 @@
+//////////////// javascript ///////////////////////
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    let mapA={}
+    let mapB={}
+    let count = 1
+    
+    for (let i =0 ; i<s.length; i++){
+        if(mapA[s[i]]!==undefined){
+          mapA[s[i]] =  mapA[s[i]] + 1
+        }
+        else{
+            mapA[s[i]] = 1
+        }
+    }
+    for (let j=0; j<t.length;j++){
+         if(mapB[t[j]]!==undefined){
+          mapB[t[j]] =  mapB[t[j]] + 1
+        }
+        else{
+            mapB[t[j]] = 1
+        }
+    }
+    for (let key in mapA){
+        if(mapA[key]!=mapB[key] || ){
+            return false
+        }
+    }
+    return true
+};
