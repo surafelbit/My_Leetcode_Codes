@@ -46,19 +46,32 @@ var isAnagram = function(s, t) {
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-     if (s.length !== t.length) return false;
-
-    let v = s.split("");
-    let p = t.split("");
-
-    // sort both (using built-in sort for efficiency)
-    v.sort();
-    p.sort();
-
-    for (let i = 0; i < v.length; i++) {
-        if (v[i] !== p[i]) {
-            return false;
+     let u = s.split("")
+    u.sort()
+    k= u.join("")
+        let v = s.split("")
+     let p = t.split("")
+      if (s.length !== t.length) return false;
+    for (let i = 1; i<v.length; i++){
+     let j = i - 1
+     let current = v[i]
+ 
+     while (j>=0 && current<v[j]){
+        v[j+1]= v[j]
+        j--
+     }
+     v[j+1]=current
+    }
+    for (let i =0 ; i <p.length - 1; i++){
+        for (let j=0 ; j<p.length-1; j++){
+            if(p[j]>p[j+1]){
+                [p[j],p[j+1]]=[p[j+1],p[j]]
+            }
         }
     }
-
-    return true;
+    for (let i =0; i<p.length; i++){
+        if(p[i]!=v[i]){
+            return false
+        }
+    }
+    return true
