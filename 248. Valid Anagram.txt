@@ -33,3 +33,32 @@ var isAnagram = function(s, t) {
     }
     return true
 };
+
+
+
+
+/////////////////////// javascript unrecommeded and messy way solving with sorting ////////////
+
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+     if (s.length !== t.length) return false;
+
+    let v = s.split("");
+    let p = t.split("");
+
+    // sort both (using built-in sort for efficiency)
+    v.sort();
+    p.sort();
+
+    for (let i = 0; i < v.length; i++) {
+        if (v[i] !== p[i]) {
+            return false;
+        }
+    }
+
+    return true;
