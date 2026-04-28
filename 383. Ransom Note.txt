@@ -1,0 +1,33 @@
+////////////////////// javascript ////////////////////////
+
+/**
+ * @param {string} ransomNote
+ * @param {string} magazine
+ * @return {boolean}
+ */
+var canConstruct = function(ransomNote, magazine) {
+    let mapA={}
+    let mapB={}
+    for (let i=0; i<ransomNote.length; i++){
+        if(mapA[ransomNote[i]]!= undefined){
+            mapA[ransomNote[i]]++
+        }
+        else{
+            mapA[ransomNote[i]]=1
+        }
+    }
+    for (let i=0; i<magazine.length; i++){
+        if(mapB[magazine[i]]!= undefined){
+            mapB[magazine[i]]++
+        }
+        else{
+            mapB[magazine[i]]=1
+        }
+    }
+    for (key in mapA){
+        if(mapA[key]>mapB[key] || mapB[key]==undefined){
+            return false
+        }
+    }
+    return true
+};
