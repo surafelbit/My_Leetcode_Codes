@@ -15,7 +15,25 @@ class Solution(object):
               result.append(i)
               result.append(j) 
               return result
-              
+       
+///////////////////// javascript solving with O(n) hash map  //
+
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+  let map ={}
+for(let i=0;i<nums.length; i++){
+    let needed = target - nums[i]
+  if(map[needed]!=undefined){
+      return [map[needed],i]
+    }
+    map[nums[i]]= i
+}
+};       
 
 
         
