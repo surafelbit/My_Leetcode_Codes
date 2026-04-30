@@ -32,5 +32,27 @@ class Solution(object):
             if (cleaned[i]!=cleaned[len(cleaned)-1-i]):
                 return False
         return True
+
+
+///////////////// javascript two pointers ////////////
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    
+    var x = s.toLowerCase()
+     var cleaned = x.replace(/[^a-zA-Z0-9]/g, "");
+     let left = 0
+    let right = cleaned.length-1
+    while(right>left){
+        if(cleaned[right]!=cleaned[left]){
+            return false
+        }
+        left++
+        right--
+    }
+    return true
+};
         
         
