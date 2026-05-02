@@ -25,3 +25,26 @@ var maxArea = function(height) {
 return biggestArea
 
 };
+
+
+////////////// python two pointers beats 93.8 percent //////////////////
+
+class Solution(object):
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        left = 0
+        right = len(height)-1
+        biggestArea=0
+        while(right>left):
+            area=(right-left)*(min(height[left],height[right]))
+            if(area>biggestArea):
+                biggestArea=area
+            if(height[right]>height[left]):
+                left = left+1
+            else:
+                right = right - 1 
+        return biggestArea           
+
