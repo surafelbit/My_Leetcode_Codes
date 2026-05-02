@@ -1,0 +1,27 @@
+////////////// javascript two pointers //////////////////
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var maxArea = function(height) {
+    let area = 0
+    let biggestArea = 0
+    let left = 0
+    let right = height.length-1
+    while(left<right){
+        area= (right-left)*Math.min(height[right],height[left])
+        if(area>biggestArea){
+            biggestArea=area
+        }
+
+    if(height[left]>height[right]){
+        right--
+    }
+    else{
+        left++
+    }
+}
+return biggestArea
+
+};
