@@ -36,15 +36,18 @@ class Solution(object):
         """
         map={}
         for i in range (len(nums)):
-            if nums[i] not in map:
-                map[nums[i]]=i
-            
-            else:
+            if nums[i]  in map:
                 if(abs(map[nums[i]]-i)<=k):
                     return True
                 else:
-                    map[nums[i]]=i    
+                    map[nums[i]]=i 
+            
+            else:
+                map[nums[i]]=i  
         return False        
+
+                   
+           
 
                    
         
