@@ -1,0 +1,35 @@
+///////////// javascript ////////////////
+
+/**
+ * @param {number} left
+ * @param {number} right
+ * @return {number[]}
+ */
+var selfDividingNumbers = function(left, right) {
+    let arr = []
+    
+     let valid
+    while(right>=left){
+       let longs = left.toString().length
+       let  sum = left
+        let org=left
+       valid = true
+    for (let i = 0; i<longs;i++){
+        let x
+        let y = (sum%10)
+       // x = sum%y
+        if( sum%10==0 || org%y!=0){
+            valid = false
+        break
+        }
+         sum = Math.floor(sum/10)
+    }
+    if(valid)
+    {
+    arr.push(left)
+    
+    }
+    left++
+    }
+    return arr
+};
