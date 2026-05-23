@@ -1,0 +1,36 @@
+//////////// javascript /////////////
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+ let writer 
+ let reader
+ let counter
+ if(nums.length<=2){
+    return nums.length
+ }
+ else{
+    writer=2
+    reader=2
+     counter =2
+    while(reader<nums.length){
+        
+        if(nums[writer-2]==nums[reader]){
+            
+             reader++
+            // if(nums[writer]!=nums[reader]){
+            //     nums[writer]=nums[reader]
+            //     writer++
+            // }
+        }
+        else{
+            nums[writer]=nums[reader]
+            reader++
+            writer++
+        }
+    }
+ }
+ return writer
+};
