@@ -1,0 +1,38 @@
+/////////////  javascript ////////////////////
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    let map = {
+        ")":"(",
+        "]":"[",
+        "}":"{"
+    }
+    let openers=["(","[","{"]
+    let stack=[]
+    let arr = s.split("")
+    for (let i=0;i<arr.length;i++){
+        let value = arr[i]
+      
+        if(openers.includes(value)){
+            stack.push(value)
+        }
+        else  {
+            if(
+            map[value]==stack[stack.length-1]
+            ){
+                stack.pop()
+            }
+            else{
+                return false
+            }
+        }
+    }
+    if(stack.length>0){
+        return false
+    }
+    return true
+
+};
