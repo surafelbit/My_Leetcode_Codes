@@ -18,3 +18,23 @@ var removeDuplicates = function(s) {
     }
     return array.join("")
 };
+
+
+////////// python //////////
+
+class Solution(object):
+    def removeDuplicates(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        other = list(s)
+        array = []
+
+        for i in range (len(other)):
+            if not array or array[len(array)-1]!=other[i] :
+                array.append(other[i])
+            else:
+                array.pop()   
+
+        return "".join(array)        
