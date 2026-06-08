@@ -1,0 +1,20 @@
+/////// javascript /////////////////
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var removeDuplicates = function(s) {
+    let other = s.split("")
+    let array=[]
+   
+    for (let i =0 ; i<other.length;i++){
+        if( array[array.length-1]!=other[i]){
+                    array.push(other[i])
+        }
+        else{
+            array.pop()
+        }
+    }
+    return array.join("")
+};
