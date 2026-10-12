@@ -1,0 +1,25 @@
+/// javascript
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isHappy = function(n) {
+    let mapA={}
+    if(n==1)return true
+    while( !mapA[n]){
+        let s = String(n)
+        let x = s.length;
+        let f = n
+         let sum =0
+        for (let i =0; i<x; i++){
+            let z = f % 10
+           
+       sum = z**2 + sum
+        f = Math.floor(f /10)
+        }
+       mapA[n]=sum 
+       n=sum
+       if(n==1) return true
+    }
+    return false
+};
