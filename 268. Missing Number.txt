@@ -1,0 +1,23 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var missingNumber = function(nums) {
+    const len = nums.length
+    let mapA={}
+    for (let i = 0; i<=len; i++){
+        if(nums.includes(i)){
+             mapA[i]=1
+        }
+        else{
+            mapA[i]=0
+        }
+    }
+    console.log(mapA)
+    for (x in mapA){
+        if(mapA[x]==0){
+            return Number(x)
+        }
+    }
+    
+};
