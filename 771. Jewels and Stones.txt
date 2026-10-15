@@ -1,0 +1,20 @@
+/**
+ * @param {string} jewels
+ * @param {string} stones
+ * @return {number}
+ */
+var numJewelsInStones = function(jewels, stones) {
+    let mapA = {}
+    let counter = 0
+    for (let i = 0; i<jewels.length; i++){
+        if(!mapA[jewels[i]]){
+            mapA[jewels[i]]=String(i)
+        }
+    }
+    for (let i = 0; i<stones.length; i++){
+        if (mapA[stones[i]]){
+           counter++ 
+        }
+    }
+    return counter
+};
