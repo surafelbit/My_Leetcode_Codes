@@ -1,0 +1,39 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {character}
+ */
+var findTheDifference = function(s, t) {
+    let mapA ={}
+    for(let i = 0; i<s.length; i++){
+        if( !mapA[s[i]]){
+     mapA[s[i]]=1}
+     else{
+         mapA[s[i]]++
+     }
+
+    }
+    let mapB={}
+    for(let i=0; i<t.length; i++){
+         if( !mapB[t[i]]){
+     mapB[t[i]]=1}
+     else{
+         mapB[t[i]]++
+     }
+    }
+    let result = ""
+    for ( let x in mapB){
+        if(!mapA[x]){
+            result = result + x
+        }
+        if(mapA[x]<mapB[x]){
+
+   for(let f = 0; f< (mapB[x]-mapA[x]); f++){
+    result = result + x
+   }
+   continue
+        }
+    }
+    
+    return result
+};
