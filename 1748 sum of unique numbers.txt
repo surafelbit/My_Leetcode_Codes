@@ -1,0 +1,23 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var sumOfUnique = function(nums) {
+     let map={}
+    for(let i=0; i<nums.length; i++){
+       
+        if(!map[nums[i]]){
+            map[nums[i]]=1
+        }
+        else{
+           map[nums[i]]++ 
+        }
+    }
+    let sum = 0
+    for (let x in map){
+        if(map[x]==1){
+            sum = sum + Number(x)
+        }
+    }
+    return sum
+};
