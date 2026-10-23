@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ ////// hashmap  ///////////////
+var findDuplicate = function(nums) {
+    let map={}
+    let n = nums.length-1
+    let start=0
+    let finish = n
+   for(let i=0;i<nums.length;i++){
+if(!map[nums[i]]){
+    map[nums[i]]=1
+}
+else{
+    return nums[i]
+}
+   }
+};
