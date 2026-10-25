@@ -1,0 +1,23 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function(s) {
+    let counter = 0
+    let lastBeforeDoom
+  for(let i=0;i<s.length;i++){
+     if(s[i]==" " && s[i-1]!=" "){
+                lastBeforeDoom=counter
+
+    }
+    if(s[i]==" "){
+        counter=0
+    }
+   
+    else{
+        counter++
+    }
+  } 
+  if(s[s.length-1]==" ") return lastBeforeDoom
+  return counter 
+};
