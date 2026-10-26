@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var smallerNumbersThanCurrent = function(nums) {
+    let h = 0
+    let newArr=[]
+    for(let i=0; i<nums.length;i++){
+         h= 0
+        for(let j=0; j<nums.length;j++){
+        if(nums[i]>nums[j]){
+            h++
+        }
+        }
+        newArr.push(h)
+       
+    }
+    return newArr
+};
