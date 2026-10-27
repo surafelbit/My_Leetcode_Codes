@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} nums
+ * @return {string[]}
+ */
+var summaryRanges = function(nums) {
+    let array = []
+    for(let i =0; i<nums.length; i++){
+        let x = i
+        while(nums.includes(nums[x]+1)){
+            x++
+        }
+        if(i==x){
+            array.push(`${nums[i]}`)
+        }
+        else{
+            array.push(`${nums[i]}->${nums[x]}`)
+        }
+        i = x
+    }
+    return array
+};
