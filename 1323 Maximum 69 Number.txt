@@ -1,0 +1,21 @@
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var maximum69Number  = function(num) {
+ 
+
+    let j=1
+     let y = 10**(num.toString().length -1)
+    while(Math.floor(num/y)%10!=6 && y>1)
+   {
+   
+    y= y/10
+    j++
+  
+    }
+    x = num % (y)
+  let  d = (10**(j)-1)*(10**(num.toString().length  - j))
+    let o = d + x
+   return o
+};
