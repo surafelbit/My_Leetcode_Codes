@@ -1,0 +1,10 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxProduct = function(nums) {
+    let y = nums.sort((a,b)=>(b-a))
+ 
+      return ((y[0]-1)*(y[1]-1))
+  
+};
