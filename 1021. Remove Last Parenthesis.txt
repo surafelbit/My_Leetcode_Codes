@@ -1,0 +1,43 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var removeOuterParentheses = function(s) {
+    
+    let opener="("
+    let closer=")"
+    let count=0
+    let two=0
+ 
+    let x=[]
+ var a =0
+     let b
+    
+    for(let i=0; i<s.length;i++){
+      if(s[i]==opener){
+        x.push(s[i])
+        count++
+        two++
+        //some.push(s[i])
+      }
+      else{
+        x.push(s[i])
+        count--
+        two++
+       
+      }
+        if(count==0){
+            //a=x.length-1
+
+            x.pop()
+         
+            x.splice(a,1)
+        
+            
+            a = x.length;
+               two=0
+        }
+    }
+    
+      return x.join("");
+};
