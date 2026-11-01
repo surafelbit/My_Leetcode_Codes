@@ -1,0 +1,25 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMin = function(nums) {
+    let left = 0
+    let right = nums.length-1
+    let changed = false
+    let some
+    while(nums[left] > nums[right]){
+        changed = true
+        if(nums[left] > nums[left+1]){
+          some = left+1
+          return nums[left + 1]
+        }
+        else if(nums[right] < nums[right-1]) {
+          some = right
+          return nums[right]
+        }
+ left++
+ right --
+    }
+    if(!changed) return nums[0]
+    return -1
+};
