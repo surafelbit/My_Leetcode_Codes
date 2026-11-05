@@ -1,0 +1,18 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var arrangeCoins = function(n) {
+    let arr =[]
+    let some = 0
+    for(let i=1;i<=n;i++){
+         some = some + i
+        if(some==n){
+            return i
+        }
+        else if(some>n){
+            return i-1
+        }
+    
+    }
+};
