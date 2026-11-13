@@ -1,0 +1,20 @@
+/**
+ * @param {string[]} word1
+ * @param {string[]} word2
+ * @return {boolean}
+ */
+var arrayStringsAreEqual = function(word1, word2) {
+    let x= ""
+    let y=""
+    for(let i=0;i<word1.length;i++){
+      x= x.concat(word1[i])
+    }
+    for(let i =0 ; i<word2.length;i++){
+y = y.concat(word2[i])
+    }
+    if(y.length != x.length) return false
+    for (let i=0;i<x.length;i++){
+        if (x[i]!=y[i]) return false
+    }
+    return true
+};
