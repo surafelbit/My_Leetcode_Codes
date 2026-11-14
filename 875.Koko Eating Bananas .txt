@@ -1,0 +1,34 @@
+/**
+ * @param {number[]} piles
+ * @param {number} h
+ * @return {number}
+ */
+var minEatingSpeed = function(piles, h) {
+let max=piles[0]
+   for(let i=1;i<piles.length;i++){
+    if(piles[i]>max){
+max = piles[i]
+    }
+    
+   } 
+   let target = max
+    let left = 1
+   let right = max
+   while(left<=right){
+  let sum = 0
+   let middle = Math.floor((left+right)/2)
+   for(let i=0;i<piles.length;i++){
+let x = Math.ceil(piles[i]/middle)
+sum = sum + x
+   }
+   if(sum<=h ){
+    target = middle
+    right  = middle - 1
+   }
+   if(sum>h){
+left = middle + 1
+   }
+  
+   }
+   return target
+};
