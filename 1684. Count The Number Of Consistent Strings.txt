@@ -1,0 +1,24 @@
+/**
+ * @param {string} allowed
+ * @param {string[]} words
+ * @return {number}
+ */
+var countConsistentStrings = function(allowed, words) {
+    let map={}
+    let counter = 0
+   for(let i =0;i<allowed.length;i++){
+if(!map[allowed[i]]){
+    map[allowed[i]]= true
+}
+   }
+   for(let i =0; i<words.length;i++){
+    counter++
+    for(let j=0; j<words[i].length;j++){
+       if(!map[words[i][j]]) {
+        counter--
+        break
+       }
+    }
+    
+   }
+return counter};
