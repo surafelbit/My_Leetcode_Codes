@@ -1,0 +1,18 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var sortSentence = function(s) {
+    let f = s.split(" ").length;
+    let array=[]
+    for(let i=0;i<f;i++){
+        array.push(" ")
+    }
+    let b = s.split(" ")
+    for(let i =0; i<f;i++){
+      let x = Number(b[i][b[i].length - 1])
+      let result = b[i].slice(0, -1);
+      array[x-1]= result
+    }
+    return array.join(" ")
+};
