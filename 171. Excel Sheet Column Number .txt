@@ -1,0 +1,16 @@
+/**
+ * @param {string} columnTitle
+ * @return {number}
+ */
+var titleToNumber = function(columnTitle) {
+    let x = columnTitle.length
+    let sum = 0
+    let i = 0
+
+    while(x>0){
+     sum = sum+  ( columnTitle[i].charCodeAt(0) - 64) * ((26) ** (x-1))
+       x--
+       i++
+    }
+  return sum
+};
