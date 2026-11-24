@@ -1,0 +1,38 @@
+/**
+ * @param {string[]} words
+ * @return {string[]}
+ */
+var findWords = function(words) {
+    let mapA={}
+    let wordA="qwertyuiop"
+    let mapB={}
+    let mapC={}
+    for (let i=0;i<wordA.length ;i++){
+     mapA[wordA[i]]=1
+    }
+     let wordB="asdfghjkl"
+    for (let i=0;i<wordB.length ;i++){
+     mapA[wordB[i]]=2
+    }
+      let wordC="zxcvbnm"
+    for (let i=0;i<wordC.length ;i++){
+     mapA[wordC[i]]=3
+    }
+    
+    let array = []
+    for(let i = 0; i<words.length;i++){
+             let currentWord = words[i].toLowerCase()
+         let stat = mapA[currentWord[0]]
+
+        for(let j=0;j<currentWord.length;j++){
+           if(mapA[currentWord[j]]!= stat){
+            stat = false
+           }
+
+        }
+        if(stat){
+            array.push(words[i])
+        }
+    }
+return array
+};
