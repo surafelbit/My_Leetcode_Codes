@@ -1,0 +1,36 @@
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {string[]}
+ */
+var uncommonFromSentences = function(s1, s2) {
+    let map={}
+    let result = []
+    let x = s1.split(" ")
+    let y = s2.split(" ")
+    for (let i=0;i<x.length;i++){
+        if(!map[x[i]]){
+            map[x[i]]=1
+        }
+        else{
+            map[x[i]]++
+        }
+    }
+    for (let i=0;i<y.length;i++){
+        if(!map[y[i]]){
+            map[y[i]]=1
+
+        }
+        else{
+            map[y[i]]++
+        }
+       
+    }
+    for( let x of Object.keys(map)){
+        if(map[x]==1){
+            result.push(x)
+        }
+
+    }
+    return result
+};
